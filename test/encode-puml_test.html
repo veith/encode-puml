@@ -14,7 +14,18 @@
 
     <test-fixture id="basic">
       <template>
-        <encode-puml></encode-puml>
+        <encode-puml puml="Bob->Alice : hello" encoded="{{enc}}"></encode-puml>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="other">
+      <template>
+        <encode-puml puml="Bob-->Alice : who" encoded="{{enc}}"></encode-puml>
+      </template>
+    </test-fixture>
+    <test-fixture id="onText">
+      <template>
+        <encode-puml puml="" encoded="{{enc}}"></encode-puml>
       </template>
     </test-fixture>
 
@@ -24,6 +35,20 @@
         test('instantiating the element works', function() {
           var element = fixture('basic');
           assert.equal(element.is, 'encode-puml');
+        });
+
+        test('encoded plantuml is correct', function() {
+          var element = fixture('basic');
+          assert.equal(element.encoded, 'SyfFqhLppCbCJbMmKiX8pSd91m00');
+        });
+
+        test('encoded plantuml is correct', function() {
+          var element = fixture('other');
+          assert.equal(element.encoded, 'SyfFqjMrSyp9J4vLi58epyW70000');
+        });
+        test('encode only if plantuml is given', function() {
+          var element = fixture('onText');
+          assert.equal(element.encoded, '{{enc}}');
         });
 
       });
