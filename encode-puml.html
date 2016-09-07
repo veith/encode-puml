@@ -1,0 +1,61 @@
+<!--
+@license
+-->
+<link rel="import" href="../polymer/polymer.html">
+<script src="libs/deflate.js"></script>
+<script src="libs/plant.js"></script>
+<!--
+Encodes puml string to encoded puml for puml web service to get a image, svg,...
+
+
+
+@author veith
+@date 03.09.16
+@hero path/to/image
+@demo demo/index.html
+-->
+
+<dom-module id="encode-puml">
+
+  <template>
+
+    <style>
+      :host {
+        display: none;
+      }
+    </style>
+
+
+  </template>
+
+  <script>
+
+    Polymer({
+      is: 'encode-puml',
+
+      properties: {
+        /**
+         * Puml string
+         */
+        puml:{
+          type:String,
+          observer:'_encode'
+        },
+        /**
+         * encoded puml
+         */
+        encoded:{
+          type:String,
+          notify:true
+        }
+      },
+      _encode:function () {
+        if(this.puml !== undefined && this.puml !==""){
+          this.set('encoded', compress(this.puml));
+        }
+
+      }
+
+    });
+  </script>
+</dom-module>
