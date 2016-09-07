@@ -1,0 +1,45 @@
+{
+  "name": "encode-puml",
+  "description": "Encode a plantuml string for a plantuml web service",
+  "main": "encode-puml.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.4.0"
+  },
+  "authors": [
+    "Veith Zäch <veithz@gmail.com>"
+  ],
+  "moduleType": [
+    "polymer",
+    "web-component"
+  ],
+  "scripts": {
+    "lint": "polymer lint --input *.html",
+    "test": "polymer test"
+  },
+  "homepage": "https://veith.github.io/encode-puml/components/encode-puml/",
+  "keywords": [
+    "polymer",
+    "web-components",
+    "plantuml",
+    "plant uml",
+    "puml",
+    "encode"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
+    "web-component-tester": "^4.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
+  },
+  "_release": "bef6a83ce9",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "bef6a83ce9f21875917a76a6b87a71a85a1dd078"
+  },
+  "_source": "git://github.com/veith/encode-puml.git",
+  "_target": "master",
+  "_originalSource": "veith/encode-puml",
+  "_direct": true
+}
